@@ -34,6 +34,14 @@ public abstract class Solider {
 
     public abstract int getSPEED();
 
+    public abstract boolean isDied();
+
+    public abstract void setDied(boolean died);
+
+    public abstract boolean isMeet();
+
+    public abstract void setMeet(boolean meet);
+
     public String getName() {
         return name;
     }
@@ -65,4 +73,6 @@ public abstract class Solider {
     public Weapon getWeapon() {
         return weapon;
     }
+
+
 }

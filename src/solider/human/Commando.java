@@ -13,8 +13,28 @@ public class Commando extends Human {
     private static final int SPEED = 4 ;
     private float health = 850 ;
 
+    boolean isDied = false;
+
+    boolean isMeet = false;
+
+    public boolean isMeet() {
+        return isMeet;
+    }
+
+    public void setMeet(boolean meet) {
+        isMeet = meet;
+    }
+
     public Commando(String name, Coodrinates coodrinates) {
         super(name, coodrinates);
+    }
+
+    public boolean isDied() {
+        return isDied;
+    }
+
+    public void setDied(boolean died) {
+        isDied = died;
     }
 
     @Override

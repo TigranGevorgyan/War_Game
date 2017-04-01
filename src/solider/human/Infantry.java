@@ -13,6 +13,25 @@ public class Infantry extends Human {
     private static final int SPEED = 3;
     private float health = 800 ;
 
+    boolean isDied = false;
+    boolean isMeet = false;
+
+    public boolean isDied() {
+        return isDied;
+    }
+
+    public boolean isMeet() {
+        return isMeet;
+    }
+
+    public void setMeet(boolean meet) {
+        isMeet = meet;
+    }
+
+    public void setDied(boolean died) {
+        isDied = died;
+    }
+
     public Infantry(String name, Coodrinates coodrinates) {
         super(name, coodrinates);
     }

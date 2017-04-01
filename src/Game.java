@@ -1,4 +1,5 @@
 import coordinates.Coodrinates;
+import solider.Solider;
 import solider.human.Commando;
 import solider.human.General;
 import solider.human.Human;
@@ -14,6 +15,7 @@ import weapon.mystic_weapon.Axe;
 import weapon.mystic_weapon.Knife;
 import weapon.mystic_weapon.Sword;
 
+import java.nio.channels.Pipe;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -26,10 +28,12 @@ public class Game {
     int deadMystic;
     int positionWhenMeet;
     int id;
+    int meetCount;
     float bonusHumans = 1.0F;
     float bonusMystics = 1.0F;
     float healthBeforeBlow;
-    boolean finish;
+    boolean answer = false;
+
 
     public Game(int x, int y) {
         line = x;
@@ -52,9 +56,6 @@ public class Game {
                 humens[i].setWeapon(new Gun());
             }
         }
-        for(int i = 0;i < humens.length;i++){
-            System.out.println("X: " + humens[i].getX() + " Y: " + humens[i].getY() + " Name> " + humens[i].getName());
-        }
         return humens;
     }
 
@@ -74,28 +75,25 @@ public class Game {
                 mystics[i].setWeapon(new Knife());
             }
         }
-        for(int i = 0;i < mystics.length;i++){
-            System.out.println("X: " + mystics[i].getX() + " Y: " + mystics[i].getY() + " Name: " + mystics[i].getName() );
-        }
         return mystics;
     }
 
-    public int[] makeRundomsArray (){
+    public int[] makeRundomsArray() {
         boolean contain = false;
         int a;
         int[] rundoms = new int[line];
         rundoms[0] = ThreadLocalRandom.current().nextInt(0, line);
-        for(int i = 1;i < line;){
+        for (int i = 1; i < line; ) {
             a = ThreadLocalRandom.current().nextInt(0, line);
-            for(int j = 0;j < i ;j++){
-                if(a != rundoms[j])
+            for (int j = 0; j < i; j++) {
+                if (a != rundoms[j])
                     contain = true;
                 else {
                     contain = false;
                     break;
                 }
             }
-            if(contain){
+            if (contain) {
                 rundoms[i] = a;
                 i++;
             }
@@ -104,99 +102,116 @@ public class Game {
         return rundoms;
     }
 
-    public void meet() {
+    public void walk() {
         Human[] humans = humanDistribution();
         Mystic[] mystics = mysticDistribution();
-        int humanX;
-        int mysticX;
-        for (int i = 0; i < humans.length; i++) {
-            for(int j = 0;j < humans.length; j++) {
-                if (humans[i].getY() == mystics[j].getY()) {
-                    while (humans[i].getX() < mystics[j].getX()) {
-                        humans[i].setX(humans[i].getX() + humans[i].getSPEED());
-                        humanX = humans[i].getX();
-                        mystics[j].setX(mystics[j].getX() - mystics[j].getSPEED());
-                        mysticX = mystics[j].getX();
-                        if (humanX > mysticX) {
-                            mystics[j].setX(humans[i].getX());
+        while (meetCount != humans.length) {
+            for (int i = 0; i < humans.length; i++) {
+                for (int j = 0; j < mystics.length; j++)
+                    if (humans[i].isDied() == false) {
+                        {
+                                if (humans[i].getY() == mystics[j].getY()) {
+                                    if (humans[i].isMeet() == false) {
+                                        humans[i].setX(humans[i].getX() + humans[i].getSPEED());
+                                        mystics[j].setX(mystics[j].getX() - mystics[j].getSPEED());
+                                        System.out.println(humans[i].getName() + " position " + humans[i].getX() + "     " +
+                                                mystics[j].getName() + " position " + mystics[j].getX());
+                                    }
+                                    if ((humans[i].getX() == mystics[j].getX()) || (humans[i].getX() > mystics[j].getX())) {
+                                        if (humans[i].isMeet() == false) {
+                                            positionWhenMeet = humans[i].getX();
+                                            System.out.println("Position when meet : " + positionWhenMeet);
+                                        }
+                                        humans[i].setMeet(true);
+                                        fight(humans[i], mystics[j]);
+                                        if (answer) {
+                                            meetCount++;
+                                            answer = false;
+                                        }
+                                }
+                            }
                         }
-                        positionWhenMeet = humans[i].getX();
-                        System.out.println(humans[i].getName() + " position: " + humans[i].getX() + "  " + mystics[j].getName() + " posituin: " + mystics[j].getX());
                     }
-                    System.out.println(humans[i].getName() + " was meet " + mystics[j].getName());
-                    System.out.println("THE FIGHT HAS BEGUN!!!");
-                    fight(humans[i], mystics[j]);
-                    if (finish)
-                        break;
-                }
             }
         }
+
     }
 
-    public void bouusStrenght(Human obj, Mystic obj1){
-        if(positionWhenMeet < column / 2) {
-            System.out.println("Thay was meeting in position <" + positionWhenMeet +
-                    "> for this reason " + obj.getName() + " strenght increased 1.2 times.");
-            bonusHumans = 1.2F;
-        }
-        if(positionWhenMeet > column / 2) {
-            System.out.println("Thay was meeting in position <" + positionWhenMeet +
-                    "> for this reason " + obj1.getName() + " strenght increased 1.2 times.");
-            bonusMystics = 1.2F;
+    public void bouusStrenght(Human obj, Mystic obj1) {
+        if(obj.isMeet() == false) {
+            if (positionWhenMeet < column / 2) {
+                System.out.println("Thay was meeting in position <" + positionWhenMeet +
+                        "> for this reason " + obj.getName() + " strenght increased 1.2 times.");
+                bonusHumans = 1.2F;
+            }
+            if (positionWhenMeet > column / 2) {
+                System.out.println("Thay was meeting in position <" + positionWhenMeet +
+                        "> for this reason " + obj1.getName() + " strenght increased 1.2 times.");
+                bonusMystics = 1.2F;
+            }
         }
     }
 
     public void fight(Human obj, Mystic obj1) {
-        bouusStrenght(obj,obj1);
-        if (obj1.getSTRENGTH() > obj.getSTRENGTH())
-            System.out.println(obj1.getName() + " was strogner,for that reason he allowing " + obj.getName() + " to hit first.  ");
-        else
-            System.out.println(obj.getName() + " was strogner,for that reason he allowing " + obj1.getName() + " to hit first.  ");
-        while ((obj.getHealth() > 0) && (obj1.getHealth() > 0)) {
-            id++;
-            healthBeforeBlow = obj1.getHealth();
-            obj1.setHealth(obj1.getHealth() - ((bonusHumans * obj.getSTRENGTH()) + obj.getWeapon().getDamage()));
-            System.out.println(id + " raund.");
-            System.out.println(obj1.getName() + " health:    Before blow: " + healthBeforeBlow + "    After blow: " + obj1.getHealth());
-            if (obj1.getHealth() <= 0) {
-                System.out.println("OPS... " + obj1.getName() + " is died.");
-                deadMystic++;
-                break;
-            }
-            id++;
+
+        bouusStrenght(obj, obj1);
+        if (obj.isMeet() == false) {
+            if (obj1.getSTRENGTH() > obj.getSTRENGTH())
+                System.out.println(obj1.getName() + " was strogner,for that reason he allowing " + obj.getName() + " to hit first.  ");
+            else
+                System.out.println(obj.getName() + " was strogner,for that reason he allowing " + obj1.getName() + " to hit first.  ");
+        }
+
+        while (obj.getHealth() > 0 && obj1.getHealth() > 0) {
+            id ++;
+            System.out.println(id + " raund:");
             healthBeforeBlow = obj.getHealth();
             obj.setHealth(obj.getHealth() - ((bonusMystics * obj1.getSTRENGTH()) + obj1.getWeapon().getDamage()));
-            System.out.println(id + " raund.");
-            System.out.println(obj.getName() + " health:     Before blow: " + healthBeforeBlow + "    After blow: " + obj.getHealth());
-            if (obj.getHealth() <= 0) {
-                System.out.println("OPS... " + obj.getName() + " is died.");
-                deadHumans++;
-                break;
-            }
+            System.out.println(obj.getName() + " HEALTH:  After: " + healthBeforeBlow + "    Before: " + obj.getHealth());
+            healthBeforeBlow = obj1.getHealth();
+            obj1.setHealth(obj1.getHealth() - ((bonusHumans * obj.getSTRENGTH()) + obj.getWeapon().getDamage()));
+            System.out.println(obj1.getName() + " HEALTH:  After: " + healthBeforeBlow + "   Before: " + obj1.getHealth());
+            areDied(obj);
+            areDied(obj1);
+            System.out.println("Dead humans: " + deadHumans);
+            System.out.println("Dead mystic: " + deadMystic);
+            break;
         }
-        System.out.println("Dead humans: " + deadHumans);
-        System.out.println("Dead mystic: " + deadMystic);
-        System.out.println("----------------------------");
+        if( !(obj.isDied()) || !(obj1.isDied())) {
+            System.out.println("----------------------------");
+        }
         finishWar();
     }
 
-    public void finishWar(){
-        if(deadHumans + deadMystic == line){
+    public void finishWar() {
+        if (deadHumans == deadMystic
+                && deadHumans != 0
+                && deadHumans + deadMystic == line) {
             System.out.println("War was finished,and no one won!!!");
+            return;
         }
         if (deadHumans > line / 2) {
             System.out.println("Mystics are win!!!");
-            finish = true;
             return;
         }
         if (deadMystic > line / 2) {
             System.out.println("Humans are win!!!");
-            finish = true;
             return;
         }
     }
 
+    public void areDied(Solider obj){
+        if (obj.getHealth() <= 0) {
+            obj.setDied(true);
+            if (obj instanceof Mystic)
+            deadMystic ++;
+            else deadHumans ++;
+            System.out.println("OOOOOOOOOps " + obj.getName() + " was died");
+            answer = true;
+        }
+    }
+
     public void start() {
-        meet();
+        walk();
     }
 }

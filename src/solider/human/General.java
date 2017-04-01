@@ -13,6 +13,26 @@ public class General extends Human {
     private static final int SPEED = 2 ;
     private float health = 1000 ;
 
+    boolean isDied = false;
+
+    boolean isMeet = false;
+
+    public boolean isMeet() {
+        return isMeet;
+    }
+
+    public void setMeet(boolean meet) {
+        isMeet = meet;
+    }
+
+    public boolean isDied() {
+        return isDied;
+    }
+
+    public void setDied(boolean died) {
+        isDied = died;
+    }
+
     public General(String name, Coodrinates coodrinates) {
         super(name, coodrinates);
     }

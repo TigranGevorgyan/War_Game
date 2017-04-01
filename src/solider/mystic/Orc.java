@@ -14,11 +14,32 @@ public class Orc extends Mystic {
     private static final int SPEED = 1 ;
     private float health = 1200;
 
+    boolean isDied = false;
+
+
     public Orc(String name, Coodrinates coodrinates) {
         super(name, coodrinates);
     }
+    boolean isMeet = false;
+
+    public boolean isDied() {
+        return isDied;
+    }
+
+    public boolean isMeet() {
+        return isMeet;
+    }
+
+    public void setMeet(boolean meet) {
+        isMeet = meet;
+    }
+
+    public void setDied(boolean died) {
+        isDied = died;
+    }
 
     @Override
+
     public float getHealth() {
         return health;
     }

@@ -13,6 +13,25 @@ public class Elf extends Mystic {
     private static final int SPEED = 5 ;
     private float health = 800;
 
+    boolean isDied = false;
+    boolean isMeet = false;
+
+    public boolean isMeet() {
+        return isMeet;
+    }
+
+    public void setMeet(boolean meet) {
+        isMeet = meet;
+    }
+
+    public boolean isDied() {
+        return isDied;
+    }
+
+    public void setDied(boolean died) {
+        isDied = died;
+    }
+
     public Elf(String name, Coodrinates coodrinates) {
         super(name, coodrinates);
     }

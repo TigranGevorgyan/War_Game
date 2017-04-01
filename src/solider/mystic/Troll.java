@@ -13,6 +13,25 @@ public class Troll extends Mystic {
     private static final int SPEED = 2;
     private float health = 2000;
 
+    boolean isDied = false;
+    boolean isMeet = false;
+
+    public boolean isDied() {
+        return isDied;
+    }
+
+    public boolean isMeet() {
+        return isMeet;
+    }
+
+    public void setMeet(boolean meet) {
+        isMeet = meet;
+    }
+
+    public void setDied(boolean died) {
+        isDied = died;
+    }
+
     public Troll(String name, Coodrinates coodrinates) {
         super(name, coodrinates);
     }
