@@ -38,6 +38,8 @@ public abstract class Solider {
 
     public abstract void setDied(boolean died);
 
+    public abstract int getHEALTH();
+
     public abstract boolean isMeet();
 
     public abstract void setMeet(boolean meet);

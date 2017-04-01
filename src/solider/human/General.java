@@ -11,6 +11,7 @@ public class General extends Human {
     private static final String TYPE = "General" ;
     private static final int STRENGTH = 10 ;
     private static final int SPEED = 2 ;
+    private static final int HEALTH = 1000 ;
     private float health = 1000 ;
 
     boolean isDied = false;
@@ -20,6 +21,8 @@ public class General extends Human {
     public boolean isMeet() {
         return isMeet;
     }
+
+
 
     public void setMeet(boolean meet) {
         isMeet = meet;
@@ -31,6 +34,11 @@ public class General extends Human {
 
     public void setDied(boolean died) {
         isDied = died;
+    }
+
+    @Override
+    public int getHEALTH() {
+        return HEALTH;
     }
 
     public General(String name, Coodrinates coodrinates) {

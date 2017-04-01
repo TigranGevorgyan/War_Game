@@ -11,11 +11,17 @@ public class Commando extends Human {
     private static final String TYPE = "Commando" ;
     private static final int STRENGTH = 12 ;
     private static final int SPEED = 4 ;
+    private static final int HEALTH = 850 ;
+
     private float health = 850 ;
 
     boolean isDied = false;
 
     boolean isMeet = false;
+
+    public int getHEALTH() {
+        return HEALTH;
+    }
 
     public boolean isMeet() {
         return isMeet;

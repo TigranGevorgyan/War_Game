@@ -11,10 +11,15 @@ public class Troll extends Mystic {
     private static final String TYPE = "Troll" ;
     private static final int STRENGTH = 30 ;
     private static final int SPEED = 2;
+    private static final int HEALTH = 2000 ;
     private float health = 2000;
 
     boolean isDied = false;
     boolean isMeet = false;
+
+    public int getHEALTH() {
+        return HEALTH;
+    }
 
     public boolean isDied() {
         return isDied;

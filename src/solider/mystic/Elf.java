@@ -11,10 +11,15 @@ public class Elf extends Mystic {
     private static final String TYPE = "Elf" ;
     private static final int STRENGTH = 10 ;
     private static final int SPEED = 5 ;
+    private static final int HEALTH = 800 ;
     private float health = 800;
 
     boolean isDied = false;
     boolean isMeet = false;
+
+    public int getHEALTH() {
+        return HEALTH;
+    }
 
     public boolean isMeet() {
         return isMeet;

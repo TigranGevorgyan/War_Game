@@ -11,10 +11,15 @@ public class Infantry extends Human {
     private static final String TYPE = "Infantry";
     private static final int STRENGTH = 7;
     private static final int SPEED = 3;
+    private static final int HEALTH = 800 ;
     private float health = 800 ;
 
     boolean isDied = false;
     boolean isMeet = false;
+
+    public int getHEALTH() {
+        return HEALTH;
+    }
 
     public boolean isDied() {
         return isDied;
