@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33cd196c-071d-43e8-93dd-9dcd9c5571c5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.java" afterPath="$PROJECT_DIR$/src/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/Solider.java" afterPath="$PROJECT_DIR$/src/solider/Solider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/human/Commando.java" afterPath="$PROJECT_DIR$/src/solider/human/Commando.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/human/General.java" afterPath="$PROJECT_DIR$/src/solider/human/General.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/human/Infantry.java" afterPath="$PROJECT_DIR$/src/solider/human/Infantry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/mystic/Elf.java" afterPath="$PROJECT_DIR$/src/solider/mystic/Elf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/mystic/Orc.java" afterPath="$PROJECT_DIR$/src/solider/mystic/Orc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/solider/mystic/Troll.java" afterPath="$PROJECT_DIR$/src/solider/mystic/Troll.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/Weapon.java" afterPath="$PROJECT_DIR$/src/weapon/Weapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/human_weapon/Gun.java" afterPath="$PROJECT_DIR$/src/weapon/human_weapon/Gun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/human_weapon/Rifle.java" afterPath="$PROJECT_DIR$/src/weapon/human_weapon/Rifle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/human_weapon/Shotgun.java" afterPath="$PROJECT_DIR$/src/weapon/human_weapon/Shotgun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/mystic_weapon/Axe.java" afterPath="$PROJECT_DIR$/src/weapon/mystic_weapon/Axe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/mystic_weapon/Knife.java" afterPath="$PROJECT_DIR$/src/weapon/mystic_weapon/Knife.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/weapon/mystic_weapon/Sword.java" afterPath="$PROJECT_DIR$/src/weapon/mystic_weapon/Sword.java" />
     </list>
     <ignored path="War_Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8121547">
-              <caret line="182" column="42" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="207" column="49" selection-start-line="207" selection-start-column="49" selection-end-line="207" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Game#0;class#Game#0" expanded="false" />
@@ -97,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Commando.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Commando.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/solider/human/Commando.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.4041096">
               <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="e#508#509#0" expanded="true" />
@@ -898,12 +884,12 @@
       <workItem from="1490705598232" duration="1335000" />
       <workItem from="1490771300387" duration="636000" />
       <workItem from="1490850997993" duration="14896000" />
-      <workItem from="1490962128877" duration="15615000" />
+      <workItem from="1490962128877" duration="17035000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60423000" />
+    <option name="totallyTimeSpent" value="61843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="745" extended-state="0" />
@@ -918,7 +904,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3627451" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29738563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18361153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1329,28 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/solider/human/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solider/human/Commando.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding>
-            <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/solider/human/Infantry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1395,10 +1359,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/solider/human/General.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8121547">
-          <caret line="182" column="42" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="49" selection-start-line="207" selection-start-column="49" selection-end-line="207" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Game#0;class#Game#0" expanded="false" />
@@ -1408,6 +1383,17 @@
             <element signature="method#bouusStrenght#0;class#Game#0" expanded="false" />
             <element signature="method#finishWar#0;class#Game#0" expanded="false" />
             <element signature="method#areDied#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/solider/human/Commando.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4041096">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding>
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
           </folding>
         </state>
       </provider>

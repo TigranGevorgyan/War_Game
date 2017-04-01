@@ -171,18 +171,19 @@ public class Game {
             healthBeforeBlow = obj1.getHealth();
             obj1.setHealth(obj1.getHealth() - ((bonusHumans * obj.getSTRENGTH()) + obj.getWeapon().getDamage()));
             System.out.println(obj1.getName() + " HEALTH:  After: " + healthBeforeBlow + "   Before: " + obj1.getHealth());
-            if(obj.getName().equals("General")){
-                if (obj1.getHealth() < (obj1.getHEALTH() * 20)/100){
-                    obj1.getWeapon().setDamage(0);
-                    System.out.println(obj1.getName() + " already has not gun.");
-                }
-            }
-            if(obj1.getName().equals("Troll")){
-                if (obj.getHealth() < (obj.getHEALTH() * 20)/100){
-                    obj.getWeapon().setDamage(0);
-                    System.out.println(obj.getName() + " already has not gun.");
-                }
-            }
+//            if(obj.getName().equals("General")){
+//                if (obj1.getHealth() < (obj1.getHEALTH() * 20)/100){
+//                    obj1.getWeapon().setDamage(0);
+//                    System.out.println(obj1.getName() + " already has not gun.");
+//                }
+//            }
+//            if(obj1.getName().equals("Troll")){
+//                if (obj.getHealth() < (obj.getHEALTH() * 20)/100){
+//                    obj.getWeapon().setDamage(0);
+//                    System.out.println(obj.getName() + " already has not gun.");
+//                }
+//            }
+            takeGun(obj,obj1);
             areDied(obj);
             areDied(obj1);
             System.out.println("Dead humans: " + deadHumans);
@@ -193,6 +194,24 @@ public class Game {
             System.out.println("----------------------------");
         }
         finishWar();
+    }
+
+    public void takeGun(Human obj, Mystic obj1){
+        if(obj.getName().equals("General")){
+            if (obj1.getHealth() < (obj1.getHEALTH() * 20)/100){
+                obj1.getWeapon().setDamage(0);
+                System.out.println("generallllllllllllllllllllllllllllll");
+                System.out.println(obj1.getName() + " already has not gun.");
+            }
+        }
+        if(obj1.getName().equals("Troll")){
+            if(obj.getHealth() < (obj.getHEALTH() * 20)/100){
+                obj.getWeapon().setDamage(0);
+                System.out.println("Trollllllllllllllllllllllllllllllllll");
+                System.out.println(obj.getName() + " already has not gun.");
+            }
+        }
+
     }
 
     public void finishWar() {
